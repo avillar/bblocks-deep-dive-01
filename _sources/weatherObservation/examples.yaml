@@ -1,0 +1,7 @@
+- title: Temperature reading at Madrid - Retiro
+  content: |-
+    A single air temperature observation, shown both as JSON and as the Turtle
+    produced by the semantic uplift.
+  snippets:
+    - language: json
+      ref: examples/observation.json

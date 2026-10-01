@@ -1,0 +1,20 @@
+{
+  "@context": {
+    "sosa": "http://www.w3.org/ns/sosa/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "ex": "https://example.org/deepdive1/",
+    "id": "@id",
+    "type": "@type",
+    "Observation": "sosa:Observation",
+    "stationName": "schema:name",
+    "observedAt": {
+      "@id": "sosa:resultTime",
+      "@type": "xsd:dateTime"
+    },
+    "temperature": {
+      "@id": "ex:airTemperatureCelsius",
+      "@type": "xsd:double"
+    }
+  }
+}

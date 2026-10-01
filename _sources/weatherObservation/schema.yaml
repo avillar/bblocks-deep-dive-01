@@ -1,0 +1,28 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+title: Weather Observation
+description: A weather station observation of air temperature
+type: object
+properties:
+  id:
+    type: string
+    format: uri
+    description: Identifier (URI) of the observation
+  type:
+    const: Observation
+  stationName:
+    type: string
+    description: Name of the weather station
+  observedAt:
+    type: string
+    format: date-time
+    description: Time at which the observation was made
+  temperature:
+    type: number
+    description: Air temperature, in degrees Celsius
+    minimum: -90
+    maximum: 60
+required:
+  - id
+  - type
+  - observedAt
+  - temperature

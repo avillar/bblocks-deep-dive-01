@@ -1,0 +1,17 @@
+transforms:
+  - id: to-summary
+    description: |-
+      Converts an observation into a flat, human-readable **summary** record.
+    type: jq
+    inputs:
+      mediaTypes:
+        - application/json
+    outputs:
+      mediaTypes:
+        - application/json
+    code: |
+      {
+        station: .stationName,
+        time: .observedAt,
+        summary: "\(.stationName // "Unknown station"): \(.temperature) °C at \(.observedAt)"
+      }
