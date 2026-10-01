@@ -1,0 +1,108 @@
+
+
+{
+  "itemIdentifier": "ogc.deepdive1.weatherObservation",
+  "name": "Weather Observation",
+  "abstract": "A simple weather station observation of air temperature, with semantic uplift to SOSA.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-10-01T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "link": "https://blocks.ogc.org",
+  "sources": [
+    {
+      "title": "SOSA/SSN Ontology",
+      "link": "https://www.w3.org/TR/vocab-ssn/"
+    },
+    {
+      "title": "OGC SensorThings API Part 1: Sensing",
+      "link": "https://www.ogc.org/standards/sensorthings/"
+    },
+    {
+      "title": "WMO Guide to Instruments and Methods of Observation (WMO-No. 8)",
+      "link": "https://community.wmo.int/en/activity-areas/imop/wmo-no_8"
+    }
+  ],
+  "tags": [
+    "deep-dive",
+    "observation",
+    "weather"
+  ],
+  "shaclShapes": {},
+  "ldContext": "https://avillar.github.io/bblocks-deep-dive-01/build/annotated/deepdive1/weatherObservation/context.jsonld",
+  "dateOfLastChange": "2026-10-01",
+  "schema": {
+    "application/yaml": "https://avillar.github.io/bblocks-deep-dive-01/build/annotated/deepdive1/weatherObservation/schema.yaml",
+    "application/json": "https://avillar.github.io/bblocks-deep-dive-01/build/annotated/deepdive1/weatherObservation/schema.json"
+  },
+  "sourceSchema": "https://avillar.github.io/bblocks-deep-dive-01/_sources/weatherObservation/schema.yaml",
+  "sourceLdContext": "https://avillar.github.io/bblocks-deep-dive-01/_sources/weatherObservation/context.jsonld",
+  "resolvedSchemaProperties": "https://avillar.github.io/bblocks-deep-dive-01/build/annotated/deepdive1/weatherObservation/resolvedProperties.json",
+  "sourceFiles": "https://avillar.github.io/bblocks-deep-dive-01/_sources/weatherObservation/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/avillar/bblocks-deep-dive-01/blob/main/build/tests/deepdive1/weatherObservation/",
+  "transforms": [
+    {
+      "id": "to-summary",
+      "description": "Converts an observation into a flat, human-readable **summary** record.",
+      "type": "jq",
+      "inputs": {
+        "mediaTypes": [
+          {
+            "mimeType": "application/json",
+            "label": "JSON",
+            "defaultExtension": "json"
+          }
+        ]
+      },
+      "outputs": {
+        "mediaTypes": [
+          {
+            "mimeType": "application/json",
+            "label": "JSON",
+            "defaultExtension": "json"
+          }
+        ]
+      },
+      "code": "{\n  station: .stationName,\n  time: .observedAt,\n  summary: \"\\(.stationName // \"Unknown station\"): \\(.temperature) \u00b0C at \\(.observedAt)\"\n}\n"
+    }
+  ],
+  "description": "## Weather Observation\n\nA minimal **weather station observation**: a single air temperature reading, taken at a\nstation at a given time.\n\nThis block is used to illustrate the main parts of an OGC Building Block:\n\n* **Metadata** (`bblock.json`)\n* **Description** (this text, in Markdown)\n* **JSON Schema** (`schema.yaml`)\n* **Semantic uplift** (`context.jsonld`), mapping the JSON properties to [SOSA](https://www.w3.org/TR/vocab-ssn/)\n* **Examples** (`examples.yaml`)\n* **Transforms** (`transforms.yaml`)\n",
+  "examples": [
+    {
+      "title": "Temperature reading at Madrid - Retiro",
+      "content": "A single air temperature observation, shown both as JSON and as the Turtle\nproduced by the semantic uplift.",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "https://avillar.github.io/bblocks-deep-dive-01/_sources/weatherObservation/examples/observation.json",
+          "url": "https://avillar.github.io/bblocks-deep-dive-01/build/tests/deepdive1/weatherObservation/example_1_1.json",
+          "transformResults": {
+            "to-summary": {
+              "success": true,
+              "sizeBytes": 138,
+              "url": "https://avillar.github.io/bblocks-deep-dive-01/build/tests/deepdive1/weatherObservation/transforms/example_1_1.to-summary.json"
+            }
+          },
+          "sizeBytes": 173,
+          "code": "{\n  \"id\": \"https://example.org/observations/1\",\n  \"type\": \"Observation\",\n  \"stationName\": \"Madrid - Retiro\",\n  \"observedAt\": \"2026-10-01T09:00:00Z\",\n  \"temperature\": 17.4\n}\n"
+        },
+        {
+          "language": "jsonld",
+          "url": "https://avillar.github.io/bblocks-deep-dive-01/build/tests/deepdive1/weatherObservation/example_1_1.jsonld",
+          "sizeBytes": 296,
+          "code": "{\n  \"@context\": \"https://avillar.github.io/bblocks-deep-dive-01/build/annotated/deepdive1/weatherObservation/context.jsonld\",\n  \"id\": \"https://example.org/observations/1\",\n  \"type\": \"Observation\",\n  \"stationName\": \"Madrid - Retiro\",\n  \"observedAt\": \"2026-10-01T09:00:00Z\",\n  \"temperature\": 17.4\n}"
+        },
+        {
+          "language": "ttl",
+          "url": "https://avillar.github.io/bblocks-deep-dive-01/build/tests/deepdive1/weatherObservation/example_1_1.ttl",
+          "sizeBytes": 383,
+          "code": "@prefix ex: <https://example.org/deepdive1/> .\n@prefix schema: <https://schema.org/> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n<https://example.org/observations/1> a sosa:Observation ;\n    sosa:resultTime \"2026-10-01T09:00:00+00:00\"^^xsd:dateTime ;\n    ex:airTemperatureCelsius 1.74e+01 ;\n    schema:name \"Madrid - Retiro\" .\n\n"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ntitle: Weather Observation\ndescription: A weather station observation of air temperature\ntype: object\nproperties:\n  id:\n    type: string\n    format: uri\n    description: Identifier (URI) of the observation\n    x-jsonld-id: '@id'\n  type:\n    const: Observation\n    x-jsonld-id: '@type'\n  stationName:\n    type: string\n    description: Name of the weather station\n    x-jsonld-id: https://schema.org/name\n  observedAt:\n    type: string\n    format: date-time\n    description: Time at which the observation was made\n    x-jsonld-id: http://www.w3.org/ns/sosa/resultTime\n    x-jsonld-type: http://www.w3.org/2001/XMLSchema#dateTime\n  temperature:\n    type: number\n    description: Air temperature, in degrees Celsius\n    minimum: -90\n    maximum: 60\n    x-jsonld-id: https://example.org/deepdive1/airTemperatureCelsius\n    x-jsonld-type: http://www.w3.org/2001/XMLSchema#double\nrequired:\n- id\n- type\n- observedAt\n- temperature\nx-jsonld-extra-terms:\n  Observation: http://www.w3.org/ns/sosa/Observation\nx-jsonld-prefixes:\n  sosa: http://www.w3.org/ns/sosa/\n  schema: https://schema.org/\n  xsd: http://www.w3.org/2001/XMLSchema#\n  ex: https://example.org/deepdive1/\n",
+  "gitRepository": "https://github.com/avillar/bblocks-deep-dive-01",
+  "gitPath": "_sources/weatherObservation"
+}

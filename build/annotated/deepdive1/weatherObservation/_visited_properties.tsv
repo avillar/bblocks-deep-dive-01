@@ -1,0 +1,6 @@
+path	@id	schema
+/id	@id	/github/workspace/build/annotated/deepdive1/weatherObservation/schema.yaml
+/type	@type	/github/workspace/build/annotated/deepdive1/weatherObservation/schema.yaml
+/stationName	https://schema.org/name	/github/workspace/build/annotated/deepdive1/weatherObservation/schema.yaml
+/observedAt	http://www.w3.org/ns/sosa/resultTime	/github/workspace/build/annotated/deepdive1/weatherObservation/schema.yaml
+/temperature	https://example.org/deepdive1/airTemperatureCelsius	/github/workspace/build/annotated/deepdive1/weatherObservation/schema.yaml

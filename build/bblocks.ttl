@@ -1,0 +1,110 @@
+@prefix bblocks: <https://www.opengis.net/def/bblocks/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://www.w3.org/ns/oa#> .
+@prefix ns2: <http://www.iana.org/assignments/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix role: <http://www.w3.org/ns/dx/prof/role/> .
+@prefix schema: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<bblocks://ogc.deepdive1.weatherObservation> a skos:Concept,
+        dcat:Dataset,
+        bblocks:BBlock,
+        bblocks:Schema ;
+    rdfs:label "Weather Observation" ;
+    dct:abstract "A simple weather station observation of air temperature, with semantic uplift to SOSA."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:created "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+    dct:description [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://avillar.github.io/bblocks-deep-dive-01/build/generateddocs/markdown/deepdive1/weatherObservation/index.md> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://avillar.github.io/bblocks-deep-dive-01/bblock/ogc.deepdive1.weatherObservation> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://avillar.github.io/bblocks-deep-dive-01/build/generateddocs/json-full/deepdive1/weatherObservation/index.json> ] ;
+    dct:hasVersion "0.1" ;
+    dct:modified "2026-10-01"^^xsd:date ;
+    dct:source <https://community.wmo.int/en/activity-areas/imop/wmo-no_8>,
+        <https://www.ogc.org/standards/sensorthings/>,
+        <https://www.w3.org/TR/vocab-ssn/> ;
+    skos:inScheme <https://avillar.github.io/bblocks-deep-dive-01/> ;
+    skos:prefLabel "Weather Observation" ;
+    skos:topConceptOf <https://avillar.github.io/bblocks-deep-dive-01/> ;
+    dcat:keyword "deep-dive",
+        "observation",
+        "weather" ;
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://avillar.github.io/bblocks-deep-dive-01/build/annotated/deepdive1/weatherObservation/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://avillar.github.io/bblocks-deep-dive-01/build/annotated/deepdive1/weatherObservation/context.jsonld> ;
+            prof:hasRole role:mapping ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://avillar.github.io/bblocks-deep-dive-01/build/annotated/deepdive1/weatherObservation/schema.json> ;
+            prof:hasRole role:schema ] ;
+    bblocks:hasSourceJsonLdContext <https://avillar.github.io/bblocks-deep-dive-01/_sources/weatherObservation/context.jsonld> ;
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
+
+<https://avillar.github.io/bblocks-deep-dive-01/build/bblocks.ttl> a prov:Entity ;
+    dct:format "text/turtle" ;
+    prov:wasAttributedTo _:Ned71312aafb24171bbf19f8cc22b76b6 ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            prov:endedAtTime "2026-10-01T12:56:45.579147"^^xsd:dateTime ;
+            prov:startedAtTime "2026-10-01T12:56:45.375418"^^xsd:dateTime ;
+            prov:used [ a prov:Entity ;
+                    dct:format "application/yaml" ;
+                    rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ],
+                [ a prov:Entity ;
+                    dct:format "application/json" ;
+                    dct:hasVersion "git:0089bfe1be332c059a6d14b31c5253103244101f" ;
+                    rdfs:seeAlso <https://avillar.github.io/bblocks-deep-dive-01/build/register.json> ] ;
+            prov:wasAssociatedWith _:Ned71312aafb24171bbf19f8cc22b76b6 ] .
+
+<https://community.wmo.int/en/activity-areas/imop/wmo-no_8> rdfs:label "WMO Guide to Instruments and Methods of Observation (WMO-No. 8)" .
+
+<https://www.ogc.org/standards/sensorthings/> rdfs:label "OGC SensorThings API Part 1: Sensing" .
+
+<https://www.w3.org/TR/vocab-ssn/> rdfs:label "SOSA/SSN Ontology" .
+
+<https://avillar.github.io/bblocks-deep-dive-01/> a skos:ConceptScheme,
+        dcat:Catalog,
+        bblocks:BBlocksRegister ;
+    rdfs:label "Building Blocks - OGC Building Blocks Deep Dive 1" ;
+    dct:abstract """Sample register used to illustrate the OGC Building Blocks viewer in the first Building Blocks deep dive.
+"""^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:description """Contains a single sample building block showing metadata, description, JSON Schema,
+semantic uplift (JSON-LD context), examples and transforms.
+"""^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:modified "2026-10-01T12:56:44.983151"^^xsd:dateTime ;
+    owl:imports <https://opengeospatial.github.io/bblocks/register.json> ;
+    skos:hasTopConcept <bblocks://ogc.deepdive1.weatherObservation> ;
+    skos:prefLabel "Building Blocks - OGC Building Blocks Deep Dive 1" ;
+    prof:hasResource [ rdfs:label "This Building Blocks Register in JSON-LD format" ;
+            dct:type "application/ld+json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/self> ;
+            ns1:hasTarget <https://avillar.github.io/bblocks-deep-dive-01/build/bblocks.jsonld> ],
+        [ rdfs:label "This Building Blocks Register in RDF Turtle format" ;
+            dct:type "text/turtle" ;
+            ns2:relation <http://www.iana.org/assignments/relation/self> ;
+            ns1:hasTarget <https://avillar.github.io/bblocks-deep-dive-01/build/bblocks.ttl> ],
+        [ rdfs:label "This Building Blocks Register in JSON format" ;
+            dct:type "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/self> ;
+            ns1:hasTarget <https://avillar.github.io/bblocks-deep-dive-01/build/register.json> ] ;
+    foaf:homepage <https://avillar.github.io/bblocks-deep-dive-01/> ;
+    bblocks:hasValidationReport <https://avillar.github.io/bblocks-deep-dive-01/build/tests/report.html> .
+
+_:Ned71312aafb24171bbf19f8cc22b76b6 a prov:Agent,
+        schema:SoftwareApplication ;
+    rdfs:label "OGC-NA tools" ;
+    dct:hasVersion "0.5.35.dev2+g67607e7aa" ;
+    rdfs:seeAlso <https://github.com/opengeospatial/ogc-na-tools> .
+

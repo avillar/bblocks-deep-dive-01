@@ -1,0 +1,128 @@
+{
+  "metaRegistry": "https://w3id.org/ogc/bblocks/meta-register.json",
+  "name": "OGC Building Blocks Deep Dive 1",
+  "abstract": "Sample register used to illustrate the OGC Building Blocks viewer in the first Building Blocks deep dive.\n",
+  "description": "Contains a single sample building block showing metadata, description, JSON Schema,\nsemantic uplift (JSON-LD context), examples and transforms.\n",
+  "modified": "2026-10-01T12:56:44.983151",
+  "tooling": {
+    "bblocks-postprocess": {
+      "commitId": "\"6411aed037da38c6d9079d9350eca33d004a4d0c",
+      "shortCommitId": "\"6411ae",
+      "date": "2026-09-23T12:30:49+00:00\""
+    }
+  },
+  "gitRepository": "https://github.com/avillar/bblocks-deep-dive-01",
+  "gitHubRepository": "https://github.com/avillar/bblocks-deep-dive-01/blob/main/",
+  "baseURL": "https://avillar.github.io/bblocks-deep-dive-01/",
+  "viewerURL": "https://avillar.github.io/bblocks-deep-dive-01/",
+  "validationReport": "https://avillar.github.io/bblocks-deep-dive-01/build/tests/report.html",
+  "validationReportJson": "https://avillar.github.io/bblocks-deep-dive-01/build/tests/report.json",
+  "imports": [
+    "https://opengeospatial.github.io/bblocks/register.json"
+  ],
+  "bblocks": [
+    {
+      "itemIdentifier": "ogc.deepdive1.weatherObservation",
+      "name": "Weather Observation",
+      "abstract": "A simple weather station observation of air temperature, with semantic uplift to SOSA.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-10-01T00:00:00Z",
+      "itemClass": "schema",
+      "version": "0.1",
+      "link": "https://blocks.ogc.org",
+      "sources": [
+        {
+          "title": "SOSA/SSN Ontology",
+          "link": "https://www.w3.org/TR/vocab-ssn/"
+        },
+        {
+          "title": "OGC SensorThings API Part 1: Sensing",
+          "link": "https://www.ogc.org/standards/sensorthings/"
+        },
+        {
+          "title": "WMO Guide to Instruments and Methods of Observation (WMO-No. 8)",
+          "link": "https://community.wmo.int/en/activity-areas/imop/wmo-no_8"
+        }
+      ],
+      "tags": [
+        "deep-dive",
+        "observation",
+        "weather"
+      ],
+      "shaclShapes": {},
+      "ldContext": "https://avillar.github.io/bblocks-deep-dive-01/build/annotated/deepdive1/weatherObservation/context.jsonld",
+      "dateOfLastChange": "2026-10-01",
+      "schema": {
+        "application/yaml": "https://avillar.github.io/bblocks-deep-dive-01/build/annotated/deepdive1/weatherObservation/schema.yaml",
+        "application/json": "https://avillar.github.io/bblocks-deep-dive-01/build/annotated/deepdive1/weatherObservation/schema.json"
+      },
+      "sourceSchema": "https://avillar.github.io/bblocks-deep-dive-01/_sources/weatherObservation/schema.yaml",
+      "sourceLdContext": "https://avillar.github.io/bblocks-deep-dive-01/_sources/weatherObservation/context.jsonld",
+      "resolvedSchemaProperties": "https://avillar.github.io/bblocks-deep-dive-01/build/annotated/deepdive1/weatherObservation/resolvedProperties.json",
+      "sourceFiles": "https://avillar.github.io/bblocks-deep-dive-01/_sources/weatherObservation/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/avillar/bblocks-deep-dive-01/blob/main/build/tests/deepdive1/weatherObservation/",
+      "transforms": [
+        {
+          "id": "to-summary",
+          "description": "Converts an observation into a flat, human-readable **summary** record.",
+          "type": "jq",
+          "inputs": {
+            "mediaTypes": [
+              {
+                "mimeType": "application/json",
+                "label": "JSON",
+                "defaultExtension": "json"
+              }
+            ]
+          },
+          "outputs": {
+            "mediaTypes": [
+              {
+                "mimeType": "application/json",
+                "label": "JSON",
+                "defaultExtension": "json"
+              }
+            ]
+          },
+          "code": "{\n  station: .stationName,\n  time: .observedAt,\n  summary: \"\\(.stationName // \"Unknown station\"): \\(.temperature) \u00b0C at \\(.observedAt)\"\n}\n"
+        }
+      ],
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://avillar.github.io/bblocks-deep-dive-01/build/generateddocs/markdown/deepdive1/weatherObservation/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://avillar.github.io/bblocks-deep-dive-01/build/generateddocs/json-full/deepdive1/weatherObservation/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://avillar.github.io/bblocks-deep-dive-01/bblock/ogc.deepdive1.weatherObservation"
+        }
+      }
+    }
+  ],
+  "remoteCacheDir": "https://avillar.github.io/bblocks-deep-dive-01/build/annotated/_cache",
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://avillar.github.io/bblocks-deep-dive-01/build/register.json",
+      "type": "application/json",
+      "title": "This Building Blocks Register in JSON format"
+    },
+    {
+      "rel": "self",
+      "href": "https://avillar.github.io/bblocks-deep-dive-01/build/bblocks.ttl",
+      "type": "text/turtle",
+      "title": "This Building Blocks Register in RDF Turtle format"
+    },
+    {
+      "rel": "self",
+      "href": "https://avillar.github.io/bblocks-deep-dive-01/build/bblocks.jsonld",
+      "type": "application/ld+json",
+      "title": "This Building Blocks Register in JSON-LD format"
+    }
+  ]
+}

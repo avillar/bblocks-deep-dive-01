@@ -1,0 +1,8 @@
+{
+  "@context": "https://avillar.github.io/bblocks-deep-dive-01/build/annotated/deepdive1/weatherObservation/context.jsonld",
+  "id": "https://example.org/observations/1",
+  "type": "Observation",
+  "stationName": "Madrid - Retiro",
+  "observedAt": "2026-10-01T09:00:00Z",
+  "temperature": 17.4
+}

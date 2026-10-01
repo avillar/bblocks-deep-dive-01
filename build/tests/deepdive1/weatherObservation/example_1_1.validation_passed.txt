@@ -1,0 +1,13 @@
+Validation report for ogc.deepdive1.weatherObservation - Weather Observation
+Generated 2026-10-01T12:56:45.355221+00:00
+=== Files ===
+Using examples/observation.json from examples
+JSON-LD context is present - uplifting
+Output JSON-LD example_1_1.jsonld created
+Output Turtle example_1_1.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+

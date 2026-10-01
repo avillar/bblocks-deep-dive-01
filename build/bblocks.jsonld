@@ -1,0 +1,380 @@
+{
+  "@context": [
+    {
+      "@base": "https://avillar.github.io/bblocks-deep-dive-01"
+    },
+    {
+      "bblocks": "https://www.opengis.net/def/bblocks/",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "skos": "http://www.w3.org/2004/02/skos/core#",
+      "dct": "http://purl.org/dc/terms/",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "prof": "http://www.w3.org/ns/dx/prof/",
+      "dcat": "http://www.w3.org/ns/dcat#",
+      "modspec": "http://www.opengis.net/def/ont/modspec/",
+      "void": "http://rdfs.org/ns/void#",
+      "foaf": "http://xmlns.com/foaf/0.1/",
+      "role": "http://www.w3.org/ns/dx/prof/role/",
+      "shacl": "https://www.w3.org/TR/shacl/",
+      "owl": "http://www.w3.org/2002/07/owl#",
+      "baseURL": "@id",
+      "name": "rdfs:label",
+      "abstract": {
+        "@id": "dct:abstract",
+        "@type": "https://www.w3.org/ns/iana/media-types/text/markdown"
+      },
+      "description": {
+        "@id": "dct:description",
+        "@type": "https://www.w3.org/ns/iana/media-types/text/markdown"
+      },
+      "status": {
+        "@id": "bblocks:status",
+        "@type": "@id",
+        "@context": {
+          "@base": "http://www.opengis.net/def/status/"
+        }
+      },
+      "dateTimeAddition": {
+        "@id": "dct:created",
+        "@type": "xsd:dateTime"
+      },
+      "version": "dct:hasVersion",
+      "dateOfLastChange": {
+        "@id": "dct:modified",
+        "@type": "xsd:date"
+      },
+      "modified": {
+        "@id": "dct:modified",
+        "@type": "xsd:dateTime"
+      },
+      "scope": {
+        "@id": "bblocks:scope",
+        "@type": "@id",
+        "@context": {
+          "@base": "http://www.opengis.net/def/bblocks/scope/"
+        }
+      },
+      "sources": {
+        "@id": "dct:source",
+        "@context": {
+          "title": "rdfs:label",
+          "link": "@id"
+        }
+      },
+      "license": {
+        "@id": "dct:license",
+        "@context": {
+          "name": "rdfs:label",
+          "url": {
+            "@id": "rdfs:seeAlso",
+            "@type": "@id"
+          }
+        }
+      },
+      "schema": {
+        "@id": "prof:hasResource",
+        "@type": "@id"
+      },
+      "ldContext": {
+        "@id": "prof:hasResource",
+        "@type": "@id"
+      },
+      "sourceLdContext": {
+        "@id": "bblocks:hasSourceJsonLdContext",
+        "@type": "@id"
+      },
+      "documentation": {
+        "@id": "dct:description",
+        "@type": "@id",
+        "@container": "@index",
+        "@index": "dct:identifier",
+        "@context": {
+          "mediatype": "dct:format",
+          "url": {
+            "@id": "rdfs:isDefinedBy",
+            "@type": "@id"
+          }
+        }
+      },
+      "rdfs:isDefinedBy": {
+        "@type": "@id"
+      },
+      "hasConcepts": {
+        "@reverse": "skos:inScheme"
+      },
+      "dependsOn": {
+        "@id": "bblocks:dependsOn",
+        "@type": "@id"
+      },
+      "isProfileOf": {
+        "@id": "prof:isProfileOf",
+        "@type": "@id"
+      },
+      "hasFormat": {
+        "@id": "dct:hasFormat",
+        "@type": "@id"
+      },
+      "seeAlso": {
+        "@id": "rdfs:seeAlso",
+        "@type": "@id"
+      },
+      "tags": "dcat:keyword",
+      "shaclShapes": {
+        "@id": "prof:hasResource",
+        "@type": "@id"
+      },
+      "validationReport": {
+        "@id": "bblocks:hasValidationReport",
+        "@type": "@id"
+      },
+      "validationPassed": "bblocks:validationPassed",
+      "imports": {
+        "@id": "owl:imports",
+        "@type": "@id"
+      },
+      "conformanceClasses": {
+        "@id": "modspec:class",
+        "@type": "@id"
+      },
+      "requirementClasses": {
+        "@id": "modspec:requirementsClass",
+        "@type": "@id"
+      },
+      "sparqlEndpoint": {
+        "@id": "void:sparqlEndpoint",
+        "@type": "@id"
+      },
+      "viewerURL": {
+        "@id": "foaf:homepage",
+        "@type": "@id"
+      },
+      "dct:conformsTo": {
+        "@type": "@id"
+      },
+      "prof:hasRole": {
+        "@type": "@id"
+      },
+      "prof:hasArtifact": {
+        "@type": "@id"
+      },
+      "rdfs:seeAlso": {
+        "@type": "@id"
+      },
+      "ontology": {
+        "@id": "prof:hasResource",
+        "@type": "@id"
+      },
+      "rdfData": {
+        "@id": "prof:hasResource",
+        "@type": "@id"
+      },
+      "links": {
+        "@id": "prof:hasResource",
+        "@context": "https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/context.jsonld"
+      },
+      "concept": {
+        "@id": "skos:closeMatch",
+        "@type": "@id"
+      },
+      "rdfType": {
+        "@id": "rdfs:subClassOf",
+        "@type": "@id"
+      },
+      "resources": {
+        "@id": "prof:hasResource",
+        "@context": {
+          "role": {
+            "@id": "prof:hasRole",
+            "@type": "@id"
+          },
+          "constraints": "role:constraints",
+          "example": "role:example",
+          "guidance": "role:guidance",
+          "mapping": "role:mapping",
+          "schema": "role:schema",
+          "specification": "role:specification",
+          "validation": "role:validation",
+          "vocabulary": "role:vocabulary",
+          "data": "role:data",
+          "ref": {
+            "@id": "prof:hasArtifact",
+            "@type": "@id"
+          },
+          "format": "dct:format",
+          "conformsTo": {
+            "@id": "dct:conformsTo",
+            "@type": "@id"
+          }
+        }
+      }
+    }
+  ],
+  "metaRegistry": "https://w3id.org/ogc/bblocks/meta-register.json",
+  "name": "Building Blocks - OGC Building Blocks Deep Dive 1",
+  "abstract": "Sample register used to illustrate the OGC Building Blocks viewer in the first Building Blocks deep dive.\n",
+  "description": "Contains a single sample building block showing metadata, description, JSON Schema,\nsemantic uplift (JSON-LD context), examples and transforms.\n",
+  "modified": "2026-10-01T12:56:44.983151",
+  "tooling": {
+    "bblocks-postprocess": {
+      "commitId": "\"6411aed037da38c6d9079d9350eca33d004a4d0c",
+      "shortCommitId": "\"6411ae",
+      "date": "2026-09-23T12:30:49+00:00\""
+    }
+  },
+  "gitRepository": "https://github.com/avillar/bblocks-deep-dive-01",
+  "gitHubRepository": "https://github.com/avillar/bblocks-deep-dive-01/blob/main/",
+  "baseURL": "https://avillar.github.io/bblocks-deep-dive-01/",
+  "viewerURL": "https://avillar.github.io/bblocks-deep-dive-01/",
+  "validationReport": "https://avillar.github.io/bblocks-deep-dive-01/build/tests/report.html",
+  "validationReportJson": "https://avillar.github.io/bblocks-deep-dive-01/build/tests/report.json",
+  "imports": [
+    "https://opengeospatial.github.io/bblocks/register.json"
+  ],
+  "remoteCacheDir": "https://avillar.github.io/bblocks-deep-dive-01/build/annotated/_cache",
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://avillar.github.io/bblocks-deep-dive-01/build/register.json",
+      "type": "application/json",
+      "title": "This Building Blocks Register in JSON format"
+    },
+    {
+      "rel": "self",
+      "href": "https://avillar.github.io/bblocks-deep-dive-01/build/bblocks.ttl",
+      "type": "text/turtle",
+      "title": "This Building Blocks Register in RDF Turtle format"
+    },
+    {
+      "rel": "self",
+      "href": "https://avillar.github.io/bblocks-deep-dive-01/build/bblocks.jsonld",
+      "type": "application/ld+json",
+      "title": "This Building Blocks Register in JSON-LD format"
+    }
+  ],
+  "@type": [
+    "skos:ConceptScheme",
+    "dcat:Catalog",
+    "bblocks:BBlocksRegister"
+  ],
+  "skos:prefLabel": "Building Blocks - OGC Building Blocks Deep Dive 1",
+  "hasConcepts": [
+    {
+      "itemIdentifier": "ogc.deepdive1.weatherObservation",
+      "name": "Weather Observation",
+      "abstract": "A simple weather station observation of air temperature, with semantic uplift to SOSA.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-10-01T00:00:00Z",
+      "itemClass": "schema",
+      "version": "0.1",
+      "link": "https://blocks.ogc.org",
+      "sources": [
+        {
+          "title": "SOSA/SSN Ontology",
+          "link": "https://www.w3.org/TR/vocab-ssn/"
+        },
+        {
+          "title": "OGC SensorThings API Part 1: Sensing",
+          "link": "https://www.ogc.org/standards/sensorthings/"
+        },
+        {
+          "title": "WMO Guide to Instruments and Methods of Observation (WMO-No. 8)",
+          "link": "https://community.wmo.int/en/activity-areas/imop/wmo-no_8"
+        }
+      ],
+      "tags": [
+        "deep-dive",
+        "observation",
+        "weather"
+      ],
+      "shaclShapes": null,
+      "ldContext": {
+        "prof:hasArtifact": "https://avillar.github.io/bblocks-deep-dive-01/build/annotated/deepdive1/weatherObservation/context.jsonld",
+        "prof:hasRole": "role:mapping",
+        "dct:format": "application/ld+json",
+        "dct:conformsTo": "https://www.w3.org/TR/json-ld11/"
+      },
+      "dateOfLastChange": "2026-10-01",
+      "schema": [
+        {
+          "prof:hasArtifact": "https://avillar.github.io/bblocks-deep-dive-01/build/annotated/deepdive1/weatherObservation/schema.yaml",
+          "prof:hasRole": "role:schema",
+          "dct:format": "application/yaml",
+          "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
+        },
+        {
+          "prof:hasArtifact": "https://avillar.github.io/bblocks-deep-dive-01/build/annotated/deepdive1/weatherObservation/schema.json",
+          "prof:hasRole": "role:schema",
+          "dct:format": "application/json",
+          "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
+        }
+      ],
+      "sourceSchema": "https://avillar.github.io/bblocks-deep-dive-01/_sources/weatherObservation/schema.yaml",
+      "sourceLdContext": "https://avillar.github.io/bblocks-deep-dive-01/_sources/weatherObservation/context.jsonld",
+      "resolvedSchemaProperties": "https://avillar.github.io/bblocks-deep-dive-01/build/annotated/deepdive1/weatherObservation/resolvedProperties.json",
+      "sourceFiles": "https://avillar.github.io/bblocks-deep-dive-01/_sources/weatherObservation/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/avillar/bblocks-deep-dive-01/blob/main/build/tests/deepdive1/weatherObservation/",
+      "transforms": [
+        {
+          "id": "to-summary",
+          "description": "Converts an observation into a flat, human-readable **summary** record.",
+          "type": "jq",
+          "inputs": {
+            "mediaTypes": [
+              {
+                "mimeType": "application/json",
+                "label": "JSON",
+                "defaultExtension": "json"
+              }
+            ]
+          },
+          "outputs": {
+            "mediaTypes": [
+              {
+                "mimeType": "application/json",
+                "label": "JSON",
+                "defaultExtension": "json"
+              }
+            ]
+          },
+          "code": "{\n  station: .stationName,\n  time: .observedAt,\n  summary: \"\\(.stationName // \"Unknown station\"): \\(.temperature) \u00b0C at \\(.observedAt)\"\n}\n"
+        }
+      ],
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://avillar.github.io/bblocks-deep-dive-01/build/generateddocs/markdown/deepdive1/weatherObservation/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://avillar.github.io/bblocks-deep-dive-01/build/generateddocs/json-full/deepdive1/weatherObservation/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://avillar.github.io/bblocks-deep-dive-01/bblock/ogc.deepdive1.weatherObservation"
+        }
+      },
+      "@id": "bblocks://ogc.deepdive1.weatherObservation",
+      "@type": [
+        "bblocks:Schema",
+        "skos:Concept",
+        "dcat:Dataset",
+        "bblocks:BBlock"
+      ],
+      "skos:prefLabel": "Weather Observation",
+      "openAPIDocument": null,
+      "ontology": null,
+      "rdfData": [],
+      "dependsOn": null,
+      "isProfileOf": null,
+      "skos:topConceptOf": {
+        "@id": "https://avillar.github.io/bblocks-deep-dive-01/"
+      }
+    }
+  ],
+  "skos:hasTopConcept": [
+    {
+      "@id": "bblocks://ogc.deepdive1.weatherObservation"
+    }
+  ]
+}

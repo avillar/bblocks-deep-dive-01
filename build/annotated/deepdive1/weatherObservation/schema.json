@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Weather Observation",
+  "description": "A weather station observation of air temperature",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uri",
+      "description": "Identifier (URI) of the observation",
+      "x-jsonld-id": "@id"
+    },
+    "type": {
+      "const": "Observation",
+      "x-jsonld-id": "@type"
+    },
+    "stationName": {
+      "type": "string",
+      "description": "Name of the weather station",
+      "x-jsonld-id": "https://schema.org/name"
+    },
+    "observedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Time at which the observation was made",
+      "x-jsonld-id": "http://www.w3.org/ns/sosa/resultTime",
+      "x-jsonld-type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "temperature": {
+      "type": "number",
+      "description": "Air temperature, in degrees Celsius",
+      "minimum": -90,
+      "maximum": 60,
+      "x-jsonld-id": "https://example.org/deepdive1/airTemperatureCelsius",
+      "x-jsonld-type": "http://www.w3.org/2001/XMLSchema#double"
+    }
+  },
+  "required": [
+    "id",
+    "type",
+    "observedAt",
+    "temperature"
+  ],
+  "x-jsonld-extra-terms": {
+    "Observation": "http://www.w3.org/ns/sosa/Observation"
+  },
+  "x-jsonld-prefixes": {
+    "sosa": "http://www.w3.org/ns/sosa/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "ex": "https://example.org/deepdive1/"
+  }
+}

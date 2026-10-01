@@ -1,0 +1,10 @@
+@prefix ex: <https://example.org/deepdive1/> .
+@prefix schema: <https://schema.org/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://example.org/observations/1> a sosa:Observation ;
+    sosa:resultTime "2026-10-01T09:00:00+00:00"^^xsd:dateTime ;
+    ex:airTemperatureCelsius 1.74e+01 ;
+    schema:name "Madrid - Retiro" .
+
